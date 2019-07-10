@@ -35,6 +35,8 @@ function lose() {
 for (let hole of holes) {
     hole.onclick = function () {
         hole.classList.contains('hole_has-mole') ? dead.innerText++ : lost.innerText++;
+        console.log(lost.innerText);
+        console.log(lost.innerText == 5);
         if (dead.innerText == 10) {
             win();
             restart();
