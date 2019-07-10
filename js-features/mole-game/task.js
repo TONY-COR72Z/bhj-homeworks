@@ -1,17 +1,5 @@
 
-const modalEl = document.getElementById('modal');
-const resetButtons = document.getElementsByClassName('reset');
-
-for (let btn of resetButtons) {
-  btn.addEventListener('click', function () {
-    if (!modalEl.classList.contains('hidden')) {
-      modalEl.classList.add('hidden');
-    }
-  });
-}
-
-//const getHole = index => document.getElementById(`hole${index}`);
-let holes = document.getElementsByClassName('hole');
+const getHole = index => document.getElementById(`hole${index}`);
 const dead = document.getElementById('dead');
 const lost = document.getElementById('lost');
 
@@ -20,49 +8,24 @@ function restart() {
     lost.textContent = 0;
 }
 
-function win() {
-    const header = modalEl.getElementsByTagName('h2')[0];
-    header.textContent = `🍾 You win! 🏅`;
-    modalEl.classList.remove('hidden');
-}
-
-function lose() {
-    const header = modalEl.getElementsByTagName('h2')[0];
-    header.textContent = `You lose 😱`;
-    modalEl.classList.remove('hidden');
-}
-
-for (let hole of holes) {
-    hole.onclick = function () {
-        hole.classList.contains('hole_has-mole') ? dead.innerText++ : lost.innerText++;
-        console.log(lost.innerText);
-        console.log(parseInt(lost.innerText) === 5);
-        if (parseInt(dead.innerText) === 10) {
-            win();
-            restart();
-        } else if (parseInt(lost.innerText) === 5) {
-            lose();
-            restart();
-        }
-    }
-}
-
-/* for (let i = 1; i <= 9; i++){
+for (let i = 1; i <= 9; i++){
     getHole(i).onclick = function() {
         if (this.className.includes('hole_has-mole')) { 
             dead.innerText++;
-            if (dead.innerText == 10) {
-                win();
+            console.log(`dead ${parseInt(dead.innerText)}`);
+            if (parseInt(dead.innerText) === 10) {
+                console.log('you win');
                 restart();
             }
             return;
         } else {
             lost.innerText++;
-            if (lost.innerText == 5) {
-                lose();
+            console.log(`lost ${parseInt(lost.innerText)}`);
+            if (parseInt(lost.innerText) === 5) {
+                console.log('you lose');
                 restart();
             }
             return;
         }
     }
-} */
+}
