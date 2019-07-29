@@ -9,11 +9,13 @@ body {
 
 .cart__product {
   position: relative;
+  border: 1px solid greenyellow;
+  margin: 5px;
 }
 .cart__product-count {
   position: absolute;
   top: 0;
-  right; 0;
+  right: 0;
   border: 2px solid green;
   border-radius: 50%;
   padding: 2px 5px;
@@ -26,6 +28,12 @@ body {
   height: 100px;
   object-fit: cover;
 }
+
+.cart__product-remove {
+  cursor: pointer;
+  font-size: 40px;
+}
+
 .product {
   display: flex;
   flex-wrap: wrap;
@@ -75,11 +83,15 @@ body {
 }
 
 .product__add {
+  display: flex;
   background: green;
-  padding: 10px 20px;
+  padding: 10px 10px;
   color: #fff;
   border-radius: 5px;
   cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
 }
 
 .product__add:hover {
