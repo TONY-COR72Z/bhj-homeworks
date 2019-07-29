@@ -1,3 +1,14 @@
+@font-face {
+  font-family: 'ProductSans-Regular';
+  src: url('ProductSans.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: 'ProductSans-Regular', arial, sans-serif;
+}
+
 .chat-widget {
   position: fixed;
   bottom: 0;
@@ -7,7 +18,7 @@
   display: none;
   width: 300px;
   height: 300px;
-  border: 2px solid green;
+  border: 1px solid greenyellow;
   border-width: 1px 0 0 1px;
   border-radius: 20px 0 0 0;
   background: #f0ffea;
@@ -59,7 +70,7 @@
 }
 .message_client .message__time {
   order: 2;
-  margin-right: 0;;
+  margin-right: 0;
   margin-left: 5px;
 }
 .message__text {
